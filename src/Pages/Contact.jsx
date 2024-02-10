@@ -56,7 +56,7 @@ const Contact = () => {
                         ></iframe>
                         
                     </div> 
-                    <div className='flex justify-center items-center flex-wrap md:flex-row gap-3 lg:gap-24'>
+                    <div className='flex md:justify-center flex-wrap md:flex-row gap-3 lg:gap-24'>
                         
                            <div className='flex items-center gap-4'>
                                 <a href='mailto:abhaypratap41234@gmil.com' className='bg-cyan-600 px-3 text-3xl py-3 rounded-full'>{info[0].logo}</a>
