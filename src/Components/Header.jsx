@@ -1,5 +1,5 @@
 import {React,useState} from 'react'
-import { Link } from 'react-router-dom';
+
 
 const NavLinks = [{name: "About" , to:"#about"},{name: "Education" , to:"#education"},{name:"Skills", to:"#skills"},{name:"Projects", to:"#projects"},{name: "Contact" , to:"#contact"}];
 

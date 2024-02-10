@@ -6,7 +6,7 @@ import { DiCss3,DiMongodb } from "react-icons/di";
 import { SiTailwindcss,SiMysql,SiCplusplus } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore from "swiper";
