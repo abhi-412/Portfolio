@@ -29,7 +29,7 @@ const About = () => {
             </div>
                 <div className='flex justify-center'>
                 <div className='flex lg:flex w-96 items-center justify-center h-full md:hidden'>
-                    <img src={img} className='w-1/2 md:w-10/12 m:h-10/12 rounded-2xl shadow-xl shadow-cyan-600 ' alt="" />
+                    <img src={img} className='w-60 md:w-10/12 m:h-10/12 rounded-2xl shadow-xl shadow-cyan-600 ' alt="" />
                 </div>
                 </div>
           </div>

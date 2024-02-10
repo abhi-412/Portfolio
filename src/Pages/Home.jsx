@@ -18,7 +18,7 @@ const Home = () => {
         <div className='grid w-10/12 py-5 gap-6 md:grid-cols-2'>
         <div className='flex justify-center '>
             <div className="w-10/12 flex items-center  justify-center">
-                <img src={img} className="object-fill w-60 h-60 lg:w-96 rounded-xl lg:h-full shadow-xl shadow-cyan-400" alt='me' />
+                <img src={img} className="object-fill w-96 h-96 lg:w-96 rounded-xl lg:h-full shadow-xl shadow-cyan-400" alt='me' />
                 </div>
             </div>
             <div className='flex flex-col gap-10 mt-24 px-4'>
