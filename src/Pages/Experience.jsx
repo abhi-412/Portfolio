@@ -15,7 +15,7 @@ const Experience = () => {
             <div className="grid grid-cols-9">
               <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Full Stack Developer (Backend Specialist)</p>
-                <a href='#' className='text-gray-400'>Aky-deva, Remote (Gurgaon, Haryana)</a>
+                <a href='https://www.linkedin.com/company/aky-deva/' className='text-gray-400'>Aky-deva, Remote (Gurgaon, Haryana)</a>
                 <p>(February 2024 - May 2024)</p>
                 <ul className='list-disc pl-5'>
                   <li>Developed an exam preparation and courses website with MERN Stack and API integration with Redux, completely from scratch.</li>
@@ -38,7 +38,7 @@ const Experience = () => {
               </div>
               <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Cloud Engineer Intern</p>
-                <a href='#' className='text-gray-400'>Goloka IT, Remote (Mumbai, MH)</a>
+                <a href='https://www.linkedin.com/company/goloka-it/' className='text-gray-400'>Goloka IT, Remote (Mumbai, MH)</a>
                 <p>(December 2023 - February 2024)</p>
                 <ul className='list-disc pl-5'>
                   <li>Collaborated with senior developers to learn AWS and its integration with websites.</li>
@@ -50,7 +50,7 @@ const Experience = () => {
             <div className="grid grid-cols-9">
               <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Full Stack Developer Intern</p>
-                <a href='#' className='text-gray-400'>Urban Office Mart, Hybrid (Vadodara, Gujarat)</a>
+                <a href='https://www.linkedin.com/company/urban-office-mart/' className='text-gray-400'>Urban Office Mart, Hybrid (Vadodara, Gujarat)</a>
                 <p>(May 2023 - November 2023)</p>
                 <ul className='list-disc pl-5'>
                   <li>Coordinated with a 4-member team to implement CRUD operations on the home website using MERN Stack, improving website UI and network speed.</li>
