@@ -6,14 +6,15 @@ import { DiCss3,DiMongodb } from "react-icons/di";
 import { SiTailwindcss,SiMysql,SiCplusplus } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { TbBrandRedux } from "react-icons/tb";
 import { Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore from "swiper";
 
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
-
-
+import { GrDeploy } from "react-icons/gr";
+import { SiExpress } from "react-icons/si";
 SwiperCore.use([Pagination]);
 
 
@@ -24,12 +25,15 @@ const  details=[
     {skill:"TailwindCss",value:60,icon:<SiTailwindcss />},
     {skill:"React JS",value:80,icon:<FaReact />},
     {skill:"Node JS",value:80,icon:<FaNodeJs />},
+    {skill:"Express JS",value:80,icon:<SiExpress />},
     {skill:"MongoDB",value:60,icon:<DiMongodb />},
+    {skill:"Redux",value:60,icon:<TbBrandRedux />},
     {skill:"MySql",value:90,icon:<SiMysql />},
     {skill:"C++",value:80,icon:<SiCplusplus />},
     {skill:"Python",value:50,icon:<FaPython />},
     {skill:"Github",value:50,icon:<FaGithub />},
-    {skill:"AWS",value:50,icon:<FaAws />}
+    {skill:"AWS",value:50,icon:<FaAws />},
+    {skill:"Vercel/Netlify",value:50,icon:<GrDeploy />}
 ];
 
 

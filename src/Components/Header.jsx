@@ -1,7 +1,7 @@
 import {React,useState} from 'react'
 
 
-const NavLinks = [{name: "About" , to:"#about"},{name: "Education" , to:"#education"},{name:"Skills", to:"#skills"},{name:"Projects", to:"#projects"},{name: "Contact" , to:"#contact"}];
+const NavLinks = [{name: "About" , to:"#about"},{name: "Education" , to:"#education"},{name:"Skills", to:"#skills"},{name:"Experience", to:"#experience"},{name:"Projects", to:"#projects"},{name: "Contact" , to:"#contact"}];
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);

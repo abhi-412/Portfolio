@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact' className='w-full flex flex-col py-5 bg-gray-800 mt-6 gap-10'>
+    <section id='contact' className='w-full flex flex-col py-5 bg-gray-900 mt-6 gap-10'>
         <div className='w-full flex justify-center'>
             <h1 className='text-5xl '>Contact <span className='text-cyan-500'>Me</span></h1>
         </div>

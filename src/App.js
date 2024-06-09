@@ -8,6 +8,7 @@ import Education from './Pages/Education';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import Skills from './Pages/Skills';
+import Experience from './Pages/Experience';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Education />
       <Skills />
+      <Experience />
       <Projects />
       <Contact />
       <Footer />

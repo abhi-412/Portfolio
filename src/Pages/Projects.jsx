@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore from "swiper";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+import { FaRegFolderOpen } from "react-icons/fa6";
 
 SwiperCore.use([Pagination]);
 
@@ -33,10 +34,10 @@ const work = [
 const Projects = () => {
     const [swiper, setSwiper] = useState(null);
   return (
-    <section id='projects' className='py-5 mt-10 flex bg-gray-900'>
+    <section id='projects' className='py-5 mt-10 flex bg-gray-800'>
     <div className="flex w-full flex-col gap-10 justify-center">
         <div className='title flex items-center gap-10 justify-center'>
-            <MdWork  className='text-6xl text-white-600'/>
+            <FaRegFolderOpen  className='text-6xl text-white-600'/>
             <h1 className='text-4xl'>My <span className='text-cyan-500'>Projects</span></h1>
         </div>
 
