@@ -11,9 +11,9 @@ const Experience = () => {
             <h1 className='text-4xl'>My <span className='text-cyan-500'>Experience</span></h1>
           </div>
 
-          <div className='mt-6 p-10'>
-            <div className="grid grid-cols-9">
-              <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
+          <div className='mt-6 p-10 flex flex-col gap-8 md:gap-4'>
+            <div className="grid grid-cols-9 justify-center">
+              <div className="col-span-9 md:col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Full Stack Developer (Backend Specialist)</p>
                 <a href='https://www.linkedin.com/company/aky-deva/' className='text-gray-400'>Aky-deva, Remote (Gurgaon, Haryana)</a>
                 <p>(February 2024 - May 2024)</p>
@@ -24,19 +24,14 @@ const Experience = () => {
                 </ul>
               </div>
               <div className='flex justify-center items-center'>
-                <div className='relative bg-cyan-700 h-full col-span-1 w-1 flex'></div>
-                <div className='absolute w-6 h-6 rounded-3xl flex flex-col justify-center items-center bg-cyan-700'>1</div>
               </div>
-              <div className="col-span-4"></div>
             </div>
 
             <div className="grid grid-cols-9">
-              <div className='col-span-4'></div>
+              <div className='md:col-span-4'></div>
               <div className='flex justify-center items-center'>
-                <div className='relative bg-cyan-700 h-full col-span-1 w-1 flex'></div>
-                <div className='absolute w-6 h-6 rounded-3xl flex flex-col justify-center items-center bg-cyan-700'>2</div>
               </div>
-              <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
+              <div className="col-span-9 md:col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Cloud Engineer Intern</p>
                 <a href='https://www.linkedin.com/company/goloka-it/' className='text-gray-400'>Goloka IT, Remote (Mumbai, MH)</a>
                 <p>(December 2023 - February 2024)</p>
@@ -48,7 +43,7 @@ const Experience = () => {
             </div>
 
             <div className="grid grid-cols-9">
-              <div className="col-span-4 bg-gray-800 px-4 py-4 rounded">
+              <div className="col-span-9 md:col-span-4 bg-gray-800 px-4 py-4 rounded">
                 <p className='md:text-xl font-semibold'>Full Stack Developer Intern</p>
                 <a href='https://www.linkedin.com/company/urban-office-mart/' className='text-gray-400'>Urban Office Mart, Hybrid (Vadodara, Gujarat)</a>
                 <p>(May 2023 - November 2023)</p>
@@ -58,8 +53,6 @@ const Experience = () => {
                 </ul>
               </div>
               <div className='flex justify-center items-center'>
-                <div className='relative bg-cyan-700 h-full col-span-1 w-1 flex'></div>
-                <div className='absolute w-6 h-6 rounded-3xl flex flex-col justify-center items-center bg-cyan-700'>3</div>
               </div>
               <div className="col-span-4"></div>
             </div>
