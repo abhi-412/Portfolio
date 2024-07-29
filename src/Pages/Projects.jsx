@@ -21,9 +21,9 @@ SwiperCore.use([Pagination]);
 
 
 const work = [
+{img:img3,name:"Shopme",desc:"A MERN Stack shopping app. Has every feature of a modern Shopping Application. It's my best showcase of work.",github:"https://github.com/abhi-412/Shopme",live:"https://shopme-ebon.vercel.app/"},
 {img:img1,name:"Portfolio",desc:"A catalogue of one's Skills and Projects for Recruiters and Collegues to see. Made using ReactJS and Tailwindcss, fully responsive.",github:"https://github.com/abhi-412/portfolio",live:"https://abhi412-portfolio.netlify.app/"},
 {img:img2,name:"MyShare",desc:"A ReactJS Image Gallary for you to manage your images and view what others are into. Boasts CRUD operations and using Sanity backend and auth with google Oauth.",github:"https://github.com/abhi-412/myShare",live:"https://myshare-abhi.netlify.app/"},
-{img:img3,name:"Shopme",desc:"A MERN Stack shopping app. Currenty being worked on. Has every feature of a modern Shopping Application. It's a work in progress.",github:"https://github.com/abhi-412/Shopme",live:"https://shopme-abhi.netlify.app"},
 {img:img4,name:"ChatterBox",desc:"Simple React UI with Firebase storage and authentication for a chatting application. A simple self practice project",github:"https://github.com/abhi-412/chat-app",live:"https://abhi-412-chatapp.netlify.app/"},
 {img:img5,name:"YelpCamp",desc:"A traditional full Stack web app Yelp clone for Campgrounds. Features like CRUD, Auth Session and Cookies etc. Uses Vanilla JS Bootstrap and MEN Stack for Backend.",github:"https://github.com/abhi-412/Shopme",live:"shopme-abhi.netlify.app"}
 
@@ -34,7 +34,7 @@ const work = [
 const Projects = () => {
     const [swiper, setSwiper] = useState(null);
   return (
-    <section id='projects' className='py-5 mt-10 flex bg-gray-800'>
+    <section id='projects' className='py-5 mt-10 w-full flex bg-gray-800'>
     <div className="flex w-full flex-col gap-10 justify-center">
         <div className='title flex items-center gap-10 justify-center'>
             <FaRegFolderOpen  className='text-6xl text-white-600'/>
@@ -42,8 +42,8 @@ const Projects = () => {
         </div>
 
         <div className='flex justify-center items-center'>
-            <div className='w-10/12 items-center'>
-            <Swiper className='w-10/12'
+            <div className='md:w-10/12 w-full items-center'>
+            <Swiper className='md:w-10/12 w-full'
             slidesPerView={1}
             spaceBetween={20}
             breakpoints={{

@@ -18,8 +18,8 @@ const ProjectCard = (props) => {
         <p className="mb-3  text-gray-300 font-normal">{desc}</p>
 
         <div className='flex gap-6'>
-            <a href={github} className='bg-cyan-900 px-4 py-2 rounded-lg hover:bg-cyan-500 hover:text-cyan-900'>Github</a>
-            <a href={live} className='bg-cyan-900 px-4 py-2 rounded-lg hover:bg-cyan-500 hover:text-cyan-900'>Live Demo</a>
+            <a href={github} className='bg-cyan-900 px-4 py-2 text-nowrap rounded-lg hover:bg-cyan-500 hover:text-cyan-900'>Github</a>
+            <a href={live} className='bg-cyan-900 px-4 py-2 rounded-lg text-nowrap hover:bg-cyan-500 hover:text-cyan-900'>Live Demo</a>
         </div>
     </div>
 </div>
