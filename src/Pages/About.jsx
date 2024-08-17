@@ -1,42 +1,188 @@
-import React from 'react'
-import img from '../assets/img-4.jpeg'
-import resume from '../assets/resume.pdf'
-const About = () => {
-  return (
-    <section id='about' className='bg-gray-800 w-full mt-10 flex justify-center py-5 md:py-24'>
-        <div className="px-6 w-full lg:px-20">
-                <div className='w-10/12 flex justify-center mb-5'>
-                    <h1 className='text-4xl font-bold lg:text-5xl'>About <span className='text-cyan-500'>Me</span></h1>
-                </div>
-          <div className='container lg:grid flex gap-10 lg:gap-0  flex-col-reverse md:grid-cols-2'>
-            <div className='flex flex-wrap gap-5 items-center xl:pl-20'>
-                    
-                <p className='md:text-xl lg:pl-20'>Hi, I am a web developer skilled in front-end and back-end development with a solid grasp of the entire web development process.I'm proficient in the MERN Stack along with C/C++, Java, Python, with experience in Git and LaTeX.
+import {
+    VerticalTimeline,
+    VerticalTimelineElement,
+  } from "react-vertical-timeline-component";
+  
+  import akyDeva from "../assets/images/akyDeva.png";
+  import golokaIT from "../assets/images/goloka_it.png";
+  import UOM from "../assets/images/uom.png";
 
-I specialize in frameworks like ReactJS, Redux Toolkit, Tailwind CSS, and BootStrap 5, and backend technologies such as NodeJS, ExpressJS, JWT, and bcrypt. I deploy on platforms like Netlify and Vercel, and work with databases including MySQL, MongoDB, and Firebase.
 
-A motivated lifelong learner, I'm currently working as a freelancer and learning new technologies like React Native. In my free time, I enjoy reading, running, and exploring new interests.
-                </p>
+import arrow from "../assets/icons/arrow.svg"
+  
+  import "react-vertical-timeline-component/style.min.css";
+  
+  import {  FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { SiLeetcode,SiCodingninjas,SiGeeksforgeeks} from "react-icons/si";
 
-                <div  className='w-full flex justify-center'>
-                    <a href={resume} download className='bg-cyan-700 text-gray-200 font-bold text-lg px-4 py-3 rounded-3xl hover:bg-cyan-500 hover:text-cyan-900'>
-                    
-                        Download CV
-                    </a>
+  const experiences = [
+    {
+        title: "Full Stack Developer",
+        company_name: "Akydeva",
+        icon: akyDeva,
+        iconBg: "#fff",
+        date: "February 2024 - May 2024",
+        points: [
+            "Developed an exam preparation and courses website with MERN Stack and API integration with Redux, completely from scratch.",
+            "Implementing responsive design and ensuring cross-browser compatibility.",
+            "Participating in code reviews and providing constructive feedback to other developers.",
+        ],
+    },
+    {
+        title: "Cloud Engineer Intern",
+        company_name: "Goloka IT",
+        icon: golokaIT,
+        iconBg: "#111",
+        date: "Dec 2023 - Feb 2024",
+        points: [
+            "Collaborated with senior developers to learn AWS and its integration with websites.",
+            "Assisted in the relocation of servers to AWS, enhancing security feasibility and storage capacity.",
+            "Participating in code reviews and providing constructive feedback to other developers.",
+        ],
+    },
+    {
+        title: "Web Developer Intern",
+        company_name: "Urban Office Mart",
+        icon: UOM,
+        iconBg: "#fff",
+        date: "May 2023 - Nov 2023",
+        points: [
+            "Developing and maintaining web applications using React.js and other related technologies.",
+            "Coordinated with a 4-member team to implement CRUD operations on the home website using MERN Stack, improving website UI and network speed.",
+            "Implemented lossless data compression algorithms on images and videos, increasing fetch and upload speeds."
+        ],
+    },
+];
+
+const Contact = [
+    {icon:FaInstagram,link:"https://www.instagram.com/abhiyadav_412?igsh=OGQ5ZDc2ODk2ZA=="},
+    {icon:FaLinkedin,link:"https://www.linkedin.com/in/abhay-yadav-sd"},
+    {icon:FaGithub,link:"https://github.com/abhi-412"},
+    {icon:SiCodingninjas,link:"https://www.naukri.com/code360/profile/abhi_yadav412"},
+    {icon:SiGeeksforgeeks,link:"https://www.geeksforgeeks.org/user/abhay412/"},
+    {icon:SiLeetcode,link:"https://leetcode.com/u/abhi_yadav412/"},
+]
+
+
+
+
+  const About = () => {
+    return (
+      <section className='max-w-5xl text-gray-300 mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)]'>
+        <h1 className='sm:text-5xl text-3xl  font-semibold sm:leading-snug font-poppins'>
+          Hello, I'm{" "}
+          <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow'>
+            {" "}
+            Abhay
+          </span>{" "}
+          👋
+        </h1>
+  
+        <div className='mt-5 flex md:text-xl text-sm flex-col gap-3 text-slate-300'>
+          <p>
+            I am a Full Stack Developer Fresher, specializing in technical
+            education through hands-on learning and building applications.
+          </p>
+
+          <div className=' flex items-center gap-2 text-blue-400 font-poppins'>
+                <Link
+                  to={'/skills'}
+                  className='font-semibold md:text-lg '
+                >
+                  Get Familiar with My Skills
+                </Link>
+                <img
+                  src={arrow}
+                  alt='arrow'
+                  className='w-4 h-4 object-contain'
+                />
+              </div>
+        </div>
+
+        <div className="py-10">
+              <h3 className='font-semibold sm:text-3xl text-xl relative font-poppins'>Connect with Me</h3>
+              <div className='my-4 flex flex-col gap-3 md:text-xl text-sm  text-slate-300'>
+                    <p>
+                    Get to know me as a person and as a professional through my social media handles. Also Check out my coding profiles.
+                    </p>
                 </div>
-                   
-            </div>
-                <div className='flex justify-center'>
-                <div className='flex lg:flex w-96 items-center justify-center h-full md:hidden'>
-                    <img src={img} className='w-60 md:w-10/12 m:h-10/12 rounded-2xl shadow-xl shadow-cyan-600 ' alt="" />
+
+                    <div className='flex flex-row justify-start my-3 items-center md:gap-10 gap-3'>
+                    {Contact.map((social,i)=>{
+                        return <Link key={i} target="_blank" to={social.link}><social.icon
+                        className='md:text-3xl text-lg text-gray-400 hover:text-white hover:scale-105 cursor-pointer'
+                        />
+                        </Link>
+                    })}
                 </div>
-                </div>
+              </div>
+  
+        <div className='py-10'>
+          <h3 className='font-semibold sm:text-3xl text-xl relative font-poppins'>Work Experience.</h3>
+          <div className='mt-5 flex flex-col gap-3 md:text-xl text-sm  text-slate-300'>
+            <p>
+              I've worked with all sorts of companies, leveling up my skills and
+              teaming up with smart people. Here's the rundown:
+            </p>
+          </div>
+  
+          <div className='mt-12 flex'>
+            <VerticalTimeline>
+              {experiences.map((experience, index) => (
+                <VerticalTimelineElement
+                  key={experience.company_name}
+                  date={experience.date}
+                  iconStyle={{ background: experience.iconBg }}
+                  icon={
+                    <div className='flex justify-center items-center w-full h-full'>
+                      <img
+                        src={experience.icon}
+                        alt={experience.company_name}
+                        className='w-[70%] h-[70%] object-cover'
+                      />
+                    </div>
+                  }
+                  contentStyle={{
+                    borderBottom: "8px",
+                    borderStyle: "solid",
+                    borderBottomColor: experience.iconBg,
+                    boxShadow: "none",
+                    backgroundColor:"rgb(8 8 8)",
+                  }}
+                >
+                  <div>
+                    <h3 className=' md:text-2xl text-xl  font-poppins font-semibold'>
+                      {experience.title}
+                    </h3>
+                    <p
+                      className=' font-medium text-lg'
+                      style={{ margin: 0 }}
+                    >
+                      {experience.company_name}
+                    </p>
+                  </div>
+  
+                  <ul className='my-5 list-disc  ml-5 space-y-2'>
+                    {experience.points.map((point, index) => (
+                      <li
+                        key={`experience-point-${index}`}
+                        className='text-slate-300 font-normal pl-1 md:text-base text-sm'
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </VerticalTimelineElement>
+              ))}
+            </VerticalTimeline>
           </div>
         </div>
-    </section>
-  )
-}
-
-export default About
-
-
+  
+        <hr className='border-slate-200' />
+  
+      </section>
+    );
+  };
+  
+  export default About;

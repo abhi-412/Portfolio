@@ -1,52 +1,127 @@
-import React from 'react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
-import img from '../assets/img-me.jpg'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
+import { Canvas } from '@react-three/fiber';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import Sky from '../Models/Sky';
+import Earth from '../Models/Earth';
+import HomeInfo from '../Components/HomeInfo';
+import Loader from '../Components/Loader';
 
-const Contact = [
-    {icon:FaInstagram,link:"https://www.instagram.com/abhiyadav_412?igsh=OGQ5ZDc2ODk2ZA=="},
-    {icon:FaFacebook,link:"https://www.facebook.com/login"},
-    {icon:FaLinkedin,link:"www.linkedin.com/in/abhay-yadav-sd"},
-    {icon:FaGithub,link:"https://github.com/abhi-412"},
-    {icon:FaDiscord,link:"https://discord.com/"},
-]
 
 const Home = () => {
+    const [isRotating, setIsRotating] = useState(false);
+    const [currentStage, setCurrentStage] = useState(5);
+    
+
+    useGSAP(() => {
+        // GSAP Animations for text
+
+            gsap.fromTo('.title', 
+                { x: 500, opacity: 0 }, 
+                { x: 0, opacity: 1, duration: 0.5 }
+            );
+            gsap.fromTo('.button', 
+                { x: -200, opacity: 0 }, 
+                { x: 0, opacity: 1, duration: 0.5 }
+            );
+
+    }, [currentStage]);
+
+
+
+    const adjustEarthForScreenSize = () => {
+        let screenScale, screenPosition;
+    
+        if (window.innerWidth < 768) {
+            screenScale = [8,8,7];
+            screenPosition = [2.2,-0.5,0];
+        } else {
+          screenScale = [17,20,17];
+          screenPosition = [5,0,-3];
+        }
+    
+        return [screenScale, screenPosition];
+      };
+    
+      const [earthScale, earthPosition] = adjustEarthForScreenSize();
+
+
+    const handRef = useRef();
+
+    useEffect(() => {
+      // GSAP animation for sliding and transforming hand emoji
+      gsap.fromTo(
+        handRef.current,
+        { x: 20, scale: 1 },
+        {
+          x: 0, // Move right
+          scale: 1.2, // Scale up slightly
+          duration: 1,
+          repeat:-1,
+          yoyo: false,
+          ease: 'power1.inOut',
+        }
+      );
+    }, []);
+
+
   return (
-    <>
-    <section className='flex w-full h-full justify-center bg-gray-900 py-20'>
-    <div className='py-5 w-full flex justify-center h-full'>
-        <div className='grid w-10/12 py-5 gap-6 md:grid-cols-2'>
-        <div className='flex justify-center '>
-            <div className="w-10/12 flex items-center  justify-center">
-                <img src={img} className="object-fill w-96 h-96 lg:w-96 rounded-xl lg:h-full shadow-xl shadow-cyan-400" alt='me' />
+    <section className='relative w-full flex flex-col h-screen hide-scrollbar justify-center bg-black'>
+                <div className={`absolute top-20 w-full flex flex-col items-center justify-center ${currentStage !==5 && "hidden"}`}>
+                    <div ref={handRef} className="md:text-2xl text-lg text-white">
+                        <span role="img" aria-label="hand" className="transition-transform duration-1 ease-in-out">
+                            🤚 
+                        </span>
+                    </div>
+                    <p className="mt-2 md:text-xl text-sm font-semibold text-gray-50">
+                        Grab and Rotate
+                    </p>
                 </div>
-            </div>
-            <div className='flex flex-col gap-10 mt-24 px-4'>
-                <div className="title justify-center flex flex-col gap-6 px-3">
-                    <h1 className='text-6xl font-bold text-cyan-600 flex '>Hello!</h1>
-                    <h2 className='text-5xl font-bold text-white-600 flex '>I'm Abhay Pratap</h2>
-                    <h3 className='text-3xl font-bold text-gray-500 flex '>MERN Stack and C++ Developer</h3>
-                </div>
-                
-                <a href='tel:+918788091946' className='flex flex-wrap justify-center md:justify-start px-3 gap-10'>
-                    <button className='bg-cyan-700 px-5 text-lg font-bold py-3 rounded-3xl hover:text-cyan-900 hover:bg-cyan-500'>Contact Me</button>
-                </a>
-                <div className='flex justify-start ml-4 items-center gap-10'>
-                    {Contact.map((social,i)=>{
-                        return <a key={i} href={social.link}><social.icon
-                        className='text-3xl text-gray-600 hover:text-white cursor-pointer'
-                        />
-                        </a>
-                    })}
-                </div>
-            </div>
-            
-        </div>
+        <div className={`absolute z-10 left-54 title flex flex-col items-center justify-center md:w-[50%] w-[60%] mt-24 md:px-8 pl-4 ${currentStage !==5 && "cursor-pointer"}}`}>
+        {currentStage && <HomeInfo currentStage={currentStage} />}
     </div>
+    <Canvas  className={`bg-transparent w-fit ${
+      isRotating ? "cursor-grabbing" : "cursor-grab"
+        }`}
+      camera={{ near: 0.1, far: 1000 }}
+    >
+
+        <Suspense fallback={<Loader />}>
+          <directionalLight position={[1, 1, 1]} intensity={1} />
+          <ambientLight intensity={2} />
+          <hemisphereLight
+            skyColor='#b1e1ff'
+            groundColor='#000000'
+            intensity={1.5}
+          />
+            {/* <ImageCube isRotating={isRotating} setCurrentStage={setCurrentStage} currenStage={currentStage} /> */}
+
+
+          <Sky isRotating={isRotating} />
+          
+            <Earth 
+            scale={earthScale}
+            position={earthPosition}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            currentStage={currentStage}
+            
+            />
+
+
+
+        </Suspense>
+
+    </Canvas>
+
+
+
+       
+    
 </section>
                     
     
-    </>
   )
 }
 

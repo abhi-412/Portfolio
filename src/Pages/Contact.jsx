@@ -1,106 +1,210 @@
-import {React,useRef} from 'react'
+import {React,Suspense,useRef, useState} from 'react'
 import emailjs from "@emailjs/browser";
-import { FaWhatsapp } from "react-icons/fa";
-import { GoMail } from "react-icons/go";
+import { Canvas } from '@react-three/fiber';
+import Xwing from '../Models/Xwing';
+import Sky from '../Models/Sky';
+import useAlert from '../Components/useAlert';
+import Alert from '../Components/Alert';
+import Loader from '../Components/Loader';
 
-const info = [
-    { logo: <GoMail />, text: "abhaypratap41234@gmail.com" },
-    { logo: <FaWhatsapp />, text: "+91 8788091946" },
-];
 
 const Contact = () => {
-    const form = useRef();
+    const [typing,setTyping] = useState(false)
+    const formRef = useRef();
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const { alert, showAlert, hideAlert } = useAlert();
+    const [loading, setLoading] = useState(false);
+  
+    const handleChange = ({ target: { name, value } }) => {
+      setForm({ ...form, [name]: value });
+    };
+  
+    const handleFocus = () => setTyping(true);
+    const handleBlur = () => setTyping(false);
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+      setLoading(true);
+      emailjs
+        .send(
+          process.env.EMAILJS_SERVICE_ID,
+          process.env.EMAILJS_TEMPLATE_ID,
+          //       form.current,
+          {
+            from_name: form.name,
+            to_name: "Abhay Pratap",
+            from_email: form.email,
+            to_email: process.env.MY_EMAIL,
+            message: form.message,
+          },
+          process.env.EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            setLoading(false);
+            showAlert({
+              show: true,
+              text: "Thank you for your message 😃",
+              type: "success",
+            });
+  
+            setTimeout(() => {
+              hideAlert(false);
+              setTyping(false);
+              setForm({
+                name: "",
+                email: "",
+                message: "",
+              });
+            }, [3000]);
+          },
+          (error) => {
+            setLoading(false);
+            console.error(error);
+            setTyping(false);
+  
+            showAlert({
+              show: true,
+              text: "I didn't receive your message 😢",
+              type: "danger",
+            });
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+            setTimeout(() => {
+              hideAlert(false);
+              setTyping(false);
+              setForm({
+                name: "",
+                email: "",
+                message: "",
+              });
+            }, [3000]);
+          }
+        );
+    };
 
-    emailjs
-      .sendForm(
-        "service_9sv0fnr",
-        "template_8m2d82a",
-        form.current,
-        "jj24Y1fYQ_D7lp8y9"
-      )
-      .then(
-        (result) => {
-          console.log(result);
-          alert("message sent successfully !");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-  };
+
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm(
+  //       "service_9sv0fnr",
+  //       "template_8m2d82a",
+  //       form.current,
+  //       "jj24Y1fYQ_D7lp8y9"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result);
+  //         alert("message sent successfully !");
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   e.target.reset();
+  // };
 
   return (
-    <section id='contact' className='w-full flex flex-col py-5 bg-gray-900 mt-6 gap-10'>
-        <div className='w-full flex justify-center'>
-            <h1 className='text-5xl '>Contact <span className='text-cyan-500'>Me</span></h1>
-        </div>
-        <div className='flex flex-col lg:flex-row w-full gap-4 px-5'>
-          
-          
-                <div className='w-full flex flex-col gap-4'> 
-                    <div
-                    className=" flex justify-center items-center w-full"
-                    >
-                        <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.6107607847966!2d93.93584267524648!3d24.842981477940675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37492785030cfa5d%3A0xa9e85369c96babc0!2sIndian%20Institute%20of%20Information%20Technology%20Manipur!5e0!3m2!1sen!2sin!4v1688284090692!5m2!1sen!2sin"
-                        width={700}
-                        height={400}
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                        title="location"
-                        ></iframe>
-                        
-                    </div> 
-                    <div className='flex md:justify-center flex-wrap md:flex-row gap-3 lg:gap-24'>
-                        
-                           <div className='flex items-center gap-4'>
-                                <a href='mailto:abhaypratap41234@gmil.com' className='bg-cyan-600 px-3 text-3xl py-3 rounded-full'>{info[0].logo}</a>
-                                <p className='text-xl'>{info[0].text}</p>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <a href='tel:+918788091946' className='bg-cyan-600 px-3 text-3xl py-3 rounded-full'>{info[1].logo}</a>
-                                <p className='text-xl'>{info[1].text}</p>
-                            </div>
-                          
-                        </div>
-              
-                </div>
-            <form
-            className=" flex w-full flex-col gap-4"
-            ref={form}
-            onSubmit={sendEmail}
-            >
+    <section id='contact' className='relative md:max-w-6xl md:mx-auto w-full min-h-screen flex md:flex-row flex-col py-20 md:px-10 px-3 bg-black text-gray-300 mt-6 gap-10'>
+      {alert.show && <Alert {...alert} />}
+
+        <div className=' w-full flex flex-col p-5'>
+        <h1 className='sm:text-5xl text-center text-3xl font-semibold sm:leading-snug font-poppins'>Get in Touch</h1>
+
+        <form
+        autocomplete="off"
+          ref={formRef}
+          onSubmit={sendEmail}
+          className='w-full flex flex-col gap-7 mt-14'
+        >
+          <label className='text-black-500 font-semibold'>
+            Name
             <input
-              className="bg-gray-700 outline-none rounded-lg p-3"
-              type="text"
-              name="user_name"
-              placeholder="Your Name"
+              type='text'
+              name='name'
+              className='bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card'
+              placeholder='John'
               required
+              value={form.name}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             />
+          </label>
+          <label className='text-black-500 font-semibold'>
+            Email
             <input
-              className="bg-gray-700 outline-none rounded-lg p-3"
-              type="email"
-              name="user_email"
-              placeholder="Your Email Address"
+              type='email'
+              name='email'
+              className='bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card'
+              placeholder='John@gmail.com'
               required
+              value={form.email}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             />
+          </label>
+          <label className='text-black-500 font-semibold'>
+            Your Message
             <textarea
-              className="bg-gray-700 outline-none rounded-lg p-3"
-              placeholder="Your Message"
-              name="message"
-              rows={10}
-              required
-            ></textarea>
-            <button className="btn-primary w-fit" type="submit" value="send">
-              Send Message
-            </button>
-          </form>
-        </div>
+              name='message'
+              rows='4'
+              className='block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card'
+              placeholder='Write your thoughts here...'
+              value={form.message}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+            />
+          </label>
+
+          <button
+            type='submit'
+            disabled={loading}
+            className='text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+          >
+            {loading ? "Sending..." : "Submit"}
+          </button>
+        </form>
+      </div>
+        <div className='w-full h-[50vh] md:h-[70vh] flex items-center justify-center md:mt-5'>
+         <Canvas  className={`bg-transparent w-full h-full`}
+            camera={{ near: 0.1, far: 1000 }}
+          >
+              <Suspense fallback={<Loader />}>
+                <directionalLight position={[1, 1, 1]} intensity={3} />
+                <ambientLight intensity={2} />
+                <pointLight position={[10, 5, 10]} intensity={1} />
+                <spotLight
+                  position={[0, 0, 0]}
+                  angle={0.15}
+                  penumbra={1}
+                  intensity={1}
+                />
+                <hemisphereLight
+                  skyColor='#b1e1ff'
+                  groundColor='#000000'
+                  intensity={1}
+                />
+                  {/* <ImageCube isRotating={isRotating} setCurrentStage={setCurrentStage} currenStage={currentStage} /> */}
+
+                <Sky isRotating={typing} />
+                <Xwing 
+                  scale={[1.5,1.5,1.5]}
+                  position={[-0.5,0,0]}
+                  rotation={[1,2,0]}
+                  typing={typing}
+                />
+
+            </Suspense>
+
+          </Canvas>
+         </div>
     </section>
   )
 }
