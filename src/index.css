@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
 html {
  
-  @apply font-Merriweather scroll-smooth;
+  font-family: "CrimsonText", "serif" ;
+  scroll-behavior: "smooth";
 }
 body {
-  font-family: "Poppins";
   @apply box-border bg-black
 }
 
