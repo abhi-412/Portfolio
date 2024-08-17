@@ -7,7 +7,7 @@ const NavLinks = [{name: "About" , to:"/about"},{name:"Skills", to:"/skills"},{n
 const Header = () => {
 
   return (
-    <nav className="bg-transparent fixed top-0 left-0 z-[999] w-full">
+    <nav className="bg-black fixed top-0 left-0 z-[999] w-full">
       <div className="px-5  sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center p-0 w-full">
