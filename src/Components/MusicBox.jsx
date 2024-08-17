@@ -3,7 +3,7 @@ import { MdMusicNote, MdMusicOff } from "react-icons/md";
 
 const MusicBox = ({music,setMusic}) => {
   return (
-    <div className='fixed bottom-5 left-5  bg-blue-950 rounded-full p-2 w-10 h-10 flex items-center justify-center cursor-pointer'
+    <div className='fixed bottom-5 left-5 z-50  bg-blue-950 rounded-full p-2 w-10 h-10 flex items-center justify-center cursor-pointer'
     onClick={() => setMusic(!music)}
     >
 

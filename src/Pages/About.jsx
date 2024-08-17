@@ -70,7 +70,7 @@ const Contact = [
   const About = () => {
     return (
       <section className='max-w-5xl text-gray-300 mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)]'>
-        <h1 className='sm:text-5xl text-3xl  font-semibold sm:leading-snug font-poppins'>
+        <h1 className='sm:text-5xl text-3xl  font-semibold sm:leading-snug'>
           Hello, I'm{" "}
           <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent font-semibold drop-shadow'>
             {" "}
@@ -85,7 +85,7 @@ const Contact = [
             education through hands-on learning and building applications.
           </p>
 
-          <div className=' flex items-center gap-2 text-blue-400 font-poppins'>
+          <div className=' flex items-center gap-2 text-blue-400 '>
                 <Link
                   to={'/skills'}
                   className='font-semibold md:text-lg '
@@ -101,7 +101,7 @@ const Contact = [
         </div>
 
         <div className="py-10">
-              <h3 className='font-semibold sm:text-3xl text-xl relative font-poppins'>Connect with Me</h3>
+              <h3 className='font-semibold sm:text-3xl text-xl relative'>Connect with Me</h3>
               <div className='my-4 flex flex-col gap-3 md:text-xl text-sm  text-slate-300'>
                     <p>
                     Get to know me as a person and as a professional through my social media handles. Also Check out my coding profiles.
@@ -119,7 +119,7 @@ const Contact = [
               </div>
   
         <div className='py-10'>
-          <h3 className='font-semibold sm:text-3xl text-xl relative font-poppins'>Work Experience.</h3>
+          <h3 className='font-semibold sm:text-3xl text-xl relative '>Work Experience.</h3>
           <div className='mt-5 flex flex-col gap-3 md:text-xl text-sm  text-slate-300'>
             <p>
               I've worked with all sorts of companies, leveling up my skills and
@@ -152,7 +152,7 @@ const Contact = [
                   }}
                 >
                   <div>
-                    <h3 className=' md:text-2xl text-xl  font-poppins font-semibold'>
+                    <h3 className=' md:text-2xl text-xl   font-semibold'>
                       {experience.title}
                     </h3>
                     <p

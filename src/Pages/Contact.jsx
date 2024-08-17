@@ -111,7 +111,7 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
         <div className=' w-full flex flex-col p-5'>
-        <h1 className='sm:text-5xl text-center text-3xl font-semibold sm:leading-snug font-poppins'>Get in Touch</h1>
+        <h1 className='sm:text-5xl text-center text-3xl font-semibold sm:leading-snug '>Get in Touch</h1>
 
         <form
         autocomplete="off"

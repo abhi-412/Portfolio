@@ -54,8 +54,8 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 2) {
     return (
       <div className='info-box'>
-        <h2 className='font-bold text-white flex'>About Me</h2>
-        <p className='font-medium text-wrap text-center'>
+        <h2 >About Me</h2>
+        <p>
          Have a look at my socials and previous experiences. <br /> Get to know me as a person and as a professional.
         </p>
         <Link to='/about' className='neo-brutalism-white neo-btn'>
@@ -69,8 +69,8 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 3) {
     return (
       <div className='info-box'>
-        <h2 className='text-4xl font-bold text-white flex'>Skills & Projects</h2>
-        <p className='font-medium text-center sm:text-xl'>
+        <h2>Projects</h2>
+        <p>
         Built up multiple skills, and projects using them. <br /> Curious about the impact?
         </p>
         <Link to='/skills' className='neo-brutalism-white neo-btn'>
@@ -84,8 +84,8 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 4) {
     return (
       <div className='info-box'>
-        <h2 className='text-4xl font-bold text-white flex'>Contact Me</h2>
-        <p className='font-medium sm:text-xl text-center'>
+        <h2>Contact Me</h2>
+        <p>
             Need a project done or looking for a developer? <br /> I'm just a few keystrokes away.
         </p>
         <Link to='/contact' className='neo-brutalism-white neo-btn'>

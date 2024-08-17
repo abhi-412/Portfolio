@@ -29,7 +29,7 @@ const work = [
 const Projects = () => {
   return (
     <section className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)]'>
-      <h1 className='sm:text-5xl text-3xl text-white font-semibold sm:leading-snug font-poppins'>
+      <h1 className='sm:text-5xl text-3xl text-white font-semibold sm:leading-snug '>
         My{" "}
         <span className='bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent drop-shadow font-semibold'>
           Projects
@@ -63,7 +63,7 @@ const Projects = () => {
                 {project.name}
               </h4>
               <p className='mt-2 text-lg text-slate-400'>{project.desc}</p>
-              <div className='mt-5 flex items-center gap-2 font-poppins'>
+              <div className='mt-5 flex items-center gap-2'>
                 <Link
                   to={project.live}
                   target='_blank'
