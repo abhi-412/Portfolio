@@ -1,6 +1,6 @@
 
 .info-box{
-    @apply flex flex-col justify-center items-center bg-black shadow-xl shadow-slate-500 gap-2 md:gap-3 relative md:px-6 md:py-6 px-3 py-4 w-full rounded;
+    @apply flex flex-col justify-center items-center bg-black shadow-xl shadow-slate-500 gap-2 md:gap-3 relative md:p-6 p-3 rounded;
     
 
 

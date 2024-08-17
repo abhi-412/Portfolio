@@ -66,7 +66,7 @@ const Home = () => {
 
 
   return (
-    <section className='relative w-full flex flex-col h-screen hide-scrollbar justify-center bg-black'>
+    <section className='relative mt-20 w-full flex flex-col h-screen hide-scrollbar justify-center bg-black'>
                 <div className={`absolute top-20 w-full flex flex-col items-center justify-center ${currentStage !==5 && "hidden"}`}>
                     <div ref={handRef} className="md:text-2xl text-lg text-white">
                         <span role="img" aria-label="hand" className="transition-transform duration-1 ease-in-out">

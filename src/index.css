@@ -9,6 +9,7 @@ html {
   @apply font-Merriweather scroll-smooth;
 }
 body {
+  font-family: "Poppins";
   @apply box-border bg-black
 }
 
