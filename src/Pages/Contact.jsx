@@ -110,7 +110,7 @@ const Contact = () => {
   // };
 
   return (
-    <section id='contact' className='relative md:max-w-6xl md:mx-auto w-full min-h-screen grid md:grid-cols-2 grid-cols-1  py-12 xl:px-10 md:px-3 lg:px-5 px-3 bg-black text-gray-300 mt-6 gap-10'>
+    <section id='contact' className='relative lg:max-w-6xl lg:mx-auto w-full min-h-screen grid md:grid-cols-2 grid-cols-1  py-12 xl:px-10 md:px-3 lg:px-5 px-3 bg-black text-gray-300 mt-6 gap-10'>
       {alert.show && <Alert {...alert} />}
 
         <div className=' col-span-1 flex flex-col p-5'>
@@ -175,7 +175,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-        <div className='col-span-1 h-[60vh] xl:h-[65vh] md:h-[50vh] lg:h-[50vh] flex items-center  justify-center md:mt-16 lg:mt-28 xl:mt-28'>
+        <div className='col-span-1 h-[60vh] xl:h-[65vh] md:h-[120vh] lg:h-[90vh] flex items-center  justify-center md:mt-16 lg:mt-28 xl:mt-28'>
          <Canvas  className={`bg-transparent w-full h-full`}
             camera={{ near: 0.1, far: 1000 }}
           >
