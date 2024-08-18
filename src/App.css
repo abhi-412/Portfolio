@@ -24,12 +24,13 @@
         @apply xl:text-lg md:text-base text-sm
         font-semibold
         absolute -bottom-5
-        px-6 md:py-2 py-1.5
+        xl:px-6 lg:px-5 md:px-4 sm:px-3 px-3.5 md:py-2 py-1.5
         xl:w-96
-        sm:w-48
-        w-36
-        md:w-52
+        sm:w-52
+        w-fit
+        md:w-56
         lg:w-64
+        text-nowrap
         rounded-full
         items-center justify-center
         flex gap-2
