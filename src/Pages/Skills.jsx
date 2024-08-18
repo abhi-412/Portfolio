@@ -96,7 +96,7 @@ const Skills = () => {
   return (
    <section className='w-full h-full flex flex-col'>
 
-     <section className="w-full scroll-p-0 relative h-[100vh] md:h-[120vh] lg:[100vh] flex flex-col items-center md:my-6  justify-center bg-black">
+     <section className="w-full scroll-p-0 relative h-[100vh] md:h-[200vh]  flex flex-col items-center md:my-6  justify-center bg-black">
       <Canvas className={`flex items-center justify-center ${lightOn ? "w-full h-full" : ""}`}>
         <directionalLight intensity={1} />
         <ambientLight intensity={0.5} />
@@ -106,12 +106,12 @@ const Skills = () => {
 
       <button
         onClick={toggleLight}
-        className="absolute w-20 flex items-center justify-center -bottom-5 mb-2 p-2 bg-gray-800 text-white text-3xl rounded-lg shadow-lg"
+        className="absolute w-20 flex items-center justify-center -bottom-10 mb-2 p-2 bg-gray-800 text-white text-3xl rounded-lg shadow-lg"
       >
         {lightOn ? <TbBulbOff /> :  <HiLightBulb />}
       </button>
 
-      <div className='absolute lg:top-48 xl:-top-40 bottom-12 md:bottom-16 w-full flex lg:flex-row flex-col p-2  items-center justify-between '>
+      <div className='absolute lg:top-48 xl:-top-40 bottom-12 md:bottom-10 w-full flex lg:flex-row flex-col p-2  items-center justify-between '>
       
           <div className="lg:w-2/5 w-full skill left-0  top-28 flex lg:p-5 p-4 flex-col justify-center">
 
