@@ -57,8 +57,8 @@ const LightBulb = ({ on }) => {
 
   useEffect(() => {
     if (on) {
-      gsap.to(bulbRef.current.scale, { x: 1.2, y: 1.2, z: 1.2, duration: 1 });
-      gsap.to(baseRef.current.scale, { x: 1.2, y: 1.2, z: 1.2, duration: 1 });
+      gsap.to(bulbRef.current.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 1 });
+      gsap.to(baseRef.current.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 1 });
     } else {
       gsap.to(bulbRef.current.scale, { x: 0.2, y: 0.2, z: 0.2, duration: 1 });
       gsap.to(baseRef.current.scale, { x: 0.5, y: 0.1, z: 0.5, duration: 1 });
@@ -94,11 +94,11 @@ const Skills = () => {
   };
 
   return (
-   <div className='w-full h-full flex flex-col'>
+   <section className='w-full h-full flex flex-col'>
 
-     <section className="w-full scroll-p-0 relative h-screen flex flex-col items-center md:my-6  justify-center bg-black">
-      <Canvas className={`flex items-center ${lightOn ? "w-full h-full" : ""}`}>
-        <directionalLight intensity={0.5} />
+     <section className="w-full scroll-p-0 relative h-[100vh] md:h-[120vh] lg:[100vh] flex flex-col items-center md:my-6  justify-center bg-black">
+      <Canvas className={`flex items-center justify-center ${lightOn ? "w-full h-full" : ""}`}>
+        <directionalLight intensity={1} />
         <ambientLight intensity={0.5} />
         <spotLight position={[0, 5, 5]} angle={0.15} penumbra={1} intensity={lightOn ? 1 : 0} />
         <LightBulb on={lightOn} />
@@ -111,11 +111,11 @@ const Skills = () => {
         {lightOn ? <TbBulbOff /> :  <HiLightBulb />}
       </button>
 
-      <div className='absolute md:top-28 bottom-10 w-full flex md:flex-row flex-col p-2  items-center justify-between '>
+      <div className='absolute lg:top-48 xl:-top-40 bottom-12 md:bottom-16 w-full flex lg:flex-row flex-col p-2  items-center justify-between '>
       
-          <div className="md:w-2/5 w-full skill left-0  top-28 flex md:p-5 p-4 flex-col justify-center">
+          <div className="lg:w-2/5 w-full skill left-0  top-28 flex lg:p-5 p-4 flex-col justify-center">
 
-          <div className={`  flex md:flex-wrap flex-nowrap md:overflow-hidden overflow-scroll hide-scrollbar  md:gap-9 gap-5 md:p-8 p-1 ${lightOn ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`  flex lg:flex-wrap flex-nowrap lg:overflow-hidden overflow-scroll hide-scrollbar  lg:gap-9 gap-5 lg:p-8 p-1 ${lightOn ? 'opacity-100' : 'opacity-0'}`}>
               {details.map((item,i)=>{
                 return <div key={i} className={`flex flex-col shadow-yellow-100 hover:scale-105  md:min-w-[120px] min-w-[100px] md:max-w-[130px] max-w-[120px] shadow-lg cursor-pointer  rounded-full gap-2 md:p-6 p-5  ${lightOn ? ' text-gray-100' : ' text-black'}`}>
                 {<div className='flex flex-col justify-center gap-2 hover:text-yellow-200 items-center'>
@@ -136,9 +136,9 @@ const Skills = () => {
             <FaArrowDown className='text-lg text-white' />
           </div>
 
-          <div className="md:w-2/5 w-full skill left-0  top-28 flex md:p-5 p-2 flex-col justify-center">
+          <div className="lg:w-2/5 w-full skill left-0  top-28 flex lg:p-5 p-2 flex-col justify-center">
 
-              <div className={`  flex md:flex-wrap flex-nowrap md:overflow-hidden overflow-scroll hide-scrollbar  md:gap-9 gap-5 md:p-8 p-1 ${lightOn ? 'opacity-100' : 'opacity-0'}`}>
+              <div className={`  flex lg:flex-wrap flex-nowrap lg:overflow-hidden overflow-scroll hide-scrollbar  lg:gap-9 gap-5 lg:p-8 p-1 ${lightOn ? 'opacity-100' : 'opacity-0'}`}>
               {details2.map((item,i)=>{
               return <div key={i} className={`flex flex-col shadow-yellow-100 transition transform delay-100 hover:scale-105  md:min-w-[120px] min-w-[100px] md:max-w-[130px] max-w-[120px] shadow-lg cursor-pointer rounded-full gap-2 md:p-6 p-5  ${lightOn ? ' text-gray-100' : ' text-black'}`}>
                       {<div className='flex flex-col justify-center hover:text-yellow-200 gap-2 items-center'>
@@ -161,7 +161,7 @@ const Skills = () => {
     </section>
 
     <Projects />
-   </div>
+   </section>
   );
 };
 

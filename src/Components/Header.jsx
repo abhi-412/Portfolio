@@ -9,15 +9,15 @@ const Header = () => {
   return (
     <nav className="bg-black fixed top-0 left-0 z-[999] w-full">
       <div className="px-5  sm:px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center p-0 w-full">
             <Link to='/'>
               <h2 className='md:text-5xl text-2xl gap-3 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent drop-shadow font-bold '>AP</h2>
             </Link>
             <div className=" w-full">
-              <ul className="ml-10 flex justify-end space-x-4">
+              <ul className="flex justify-end space-x-4 md:space-x-6">
                 {NavLinks.map((link,i)=>{
-                    return  <li key={i} className="text-gray-300 cursor-pointer  hover:text-cyan-300 px-3 py-2 rounded-md text-lg lg:text-2xl font-semibold"> <Link to={link.to} >{link.name}</Link></li>
+                    return  <li key={i} className="text-gray-300 cursor-pointer  hover:text-cyan-300 py-2 rounded-md text-lg lg:text-2xl font-semibold"> <Link to={link.to} >{link.name}</Link></li>
 
                 })}
                 

@@ -14,6 +14,9 @@ const Contact = () => {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const { alert, showAlert, hideAlert } = useAlert();
     const [loading, setLoading] = useState(false);
+
+    console.log(process.env.REACT_APP_MY_EMAIL);
+    
   
     const handleChange = ({ target: { name, value } }) => {
       setForm({ ...form, [name]: value });
@@ -27,17 +30,17 @@ const Contact = () => {
       setLoading(true);
       emailjs
         .send(
-          process.env.EMAILJS_SERVICE_ID,
-          process.env.EMAILJS_TEMPLATE_ID,
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
           //       form.current,
           {
             from_name: form.name,
             to_name: "Abhay Pratap",
             from_email: form.email,
-            to_email: process.env.MY_EMAIL,
+            to_email: process.env.REACT_APP_MY_EMAIL,
             message: form.message,
           },
-          process.env.EMAILJS_PUBLIC_KEY
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
         .then(
           () => {
@@ -107,10 +110,10 @@ const Contact = () => {
   // };
 
   return (
-    <section id='contact' className='relative md:max-w-6xl md:mx-auto w-full min-h-screen flex md:flex-row flex-col py-20 md:px-10 px-3 bg-black text-gray-300 mt-6 gap-10'>
+    <section id='contact' className='relative md:max-w-6xl md:mx-auto w-full min-h-screen grid md:grid-cols-2 grid-cols-1  py-12 xl:px-10 md:px-3 lg:px-5 px-3 bg-black text-gray-300 mt-6 gap-10'>
       {alert.show && <Alert {...alert} />}
 
-        <div className=' w-full flex flex-col p-5'>
+        <div className=' col-span-1 flex flex-col p-5'>
         <h1 className='sm:text-5xl text-center text-3xl font-semibold sm:leading-snug '>Get in Touch</h1>
 
         <form
@@ -172,7 +175,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-        <div className='w-full h-[50vh] md:h-[70vh] flex items-center justify-center md:mt-5'>
+        <div className='col-span-1 h-[60vh] xl:h-[65vh] md:h-[50vh] lg:h-[50vh] flex items-center  justify-center md:mt-16 lg:mt-28 xl:mt-28'>
          <Canvas  className={`bg-transparent w-full h-full`}
             camera={{ near: 0.1, far: 1000 }}
           >

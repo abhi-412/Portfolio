@@ -66,18 +66,18 @@ const Home = () => {
 
 
   return (
-    <section className='relative mt-8 w-full flex flex-col h-screen hide-scrollbar justify-center bg-black'>
-                <div className={`absolute top-20 w-full flex flex-col items-center justify-center ${currentStage !==5 && "hidden"}`}>
-                    <div ref={handRef} className="md:text-2xl text-lg text-white">
+    <section className='relative mt-8 lg:mt-10 w-full flex flex-col h-screen hide-scrollbar justify-center bg-black'>
+                <div className={`absolute xl:top-20 lg:top-16 md:top-12 top-10 w-full flex flex-col items-center justify-center ${currentStage !==5 && "hidden"}`}>
+                    <div ref={handRef} className="xl:text-2xl md:text-lg lg:text-xl  text-base text-white">
                         <span role="img" aria-label="hand" className="transition-transform duration-1 ease-in-out">
                             🤚 
                         </span>
                     </div>
-                    <p className="mt-2 md:text-xl text-sm font-semibold text-gray-50">
+                    <p className="mt-2 xl:text-xl lg-text-lg md:text-base text-sm font-semibold text-gray-50">
                         Grab and Rotate
                     </p>
                 </div>
-        <div className={`absolute z-10 left-54 title flex flex-col items-center justify-center md:w-[50%] w-[60%] mt-24 md:px-8 pl-4 ${currentStage !==5 && "cursor-pointer"}}`}>
+        <div className={`absolute z-10 left-54 title flex flex-col items-center justify-center md:w-[50%] w-[60%] sm:mt-16 md:mt-0  mt-24 md:px-8 pl-4 ${currentStage !==5 && "cursor-pointer"}}`}>
         {currentStage && <HomeInfo currentStage={currentStage} />}
     </div>
     <Canvas  className={`bg-transparent w-fit ${

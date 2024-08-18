@@ -1,18 +1,19 @@
 
 .info-box{
-    @apply flex flex-col justify-center items-center bg-black shadow-xl shadow-slate-500 gap-2 md:gap-3 relative md:p-6 p-3 rounded;
+    @apply flex flex-col justify-center items-center bg-black shadow-xl shadow-slate-500 gap-2 md:gap-3 relative xl:p-6 lg:p-4 p-3 rounded;
     
 
 
     h2{
-        @apply text-cyan-600 font-semibold md:text-4xl text-2xl mt-0
+        @apply text-cyan-600 font-semibold md:text-2xl lg:text-3xl xl:text-5xl text-2xl mt-0
     }
 
     p{
         @apply text-center
-        text-base
-        sm:text-base
-        lg:text-xl
+        text-sm
+        xl:text-xl
+        md:text-base
+        lg:text-lg
         text-gray-300 
         px-1 md:px-3
         mb-3.5
@@ -20,11 +21,15 @@
     }
 
     a{
-        @apply md:text-lg text-sm
+        @apply xl:text-lg md:text-base text-sm
         font-semibold
         absolute -bottom-5
-        md:px-12 px-6 md:py-2 py-1.5
-        md:w-96
+        px-6 md:py-2 py-1.5
+        xl:w-96
+        sm:w-48
+        w-36
+        md:w-52
+        lg:w-64
         rounded-full
         items-center justify-center
         flex gap-2
