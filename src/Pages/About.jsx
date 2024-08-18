@@ -108,7 +108,7 @@ const Contact = [
                     </p>
                 </div>
 
-                    <div className='flex flex-row justify-start my-3 items-center md:gap-10 gap-5'>
+                    <div className='flex flex-row justify-start my-3 items-center md:gap-10 gap-7'>
                     {Contact.map((social,i)=>{
                         return <Link key={i} target="_blank" to={social.link}><social.icon
                         className='md:text-3xl text-lg text-gray-400 hover:text-white hover:scale-105 cursor-pointer'
