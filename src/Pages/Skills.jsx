@@ -136,7 +136,7 @@ const Skills = () => {
             <FaArrowDown className='text-lg text-white' />
           </div>
 
-          <div className="lg:w-2/5 w-full skill left-0  top-28 flex lg:p-5 p-2 flex-col justify-center">
+          <div className="lg:w-2/5 w-full skill left-0 lg:ml-5 top-28 flex lg:p-5 p-2 flex-col justify-center">
 
               <div className={`  flex lg:flex-wrap flex-nowrap lg:overflow-hidden overflow-scroll hide-scrollbar  lg:gap-9 gap-5 lg:p-8 p-1 ${lightOn ? 'opacity-100' : 'opacity-0'}`}>
               {details2.map((item,i)=>{
