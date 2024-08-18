@@ -96,7 +96,7 @@ const Skills = () => {
   return (
    <section className='w-full h-full flex flex-col'>
 
-     <section className="w-full scroll-p-0 relative h-[100vh] md:h-[200vh] lg:h[100vh]  flex flex-col items-center md:my-6  justify-center bg-black">
+     <section className="w-full scroll-p-0 relative h-[100vh] md:h-[200vh] lg:h-[100vh]  flex flex-col items-center md:my-6  justify-center bg-black">
       <Canvas className={`flex items-center justify-center ${lightOn ? "w-full h-full" : ""}`}>
         <directionalLight intensity={1} />
         <ambientLight intensity={0.5} />
