@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
-import resume from "../assets/resume.pdf"
+import resume from "../assets/Abhay_Full_Stack_Resume.pdf"
 import { IoCall, IoMailSharp } from 'react-icons/io5';
 
 const HomeInfo = ({ currentStage }) => {
