@@ -10,7 +10,7 @@ const Xwing = ({typing,...props})=> {
   useEffect(() => {
 
     
-    const animatedAction = actions['Take 01']; // Replace 'walking' with the actual name of the animation
+    const animatedAction = actions['Take 01'];
     if (animatedAction && typing) {
         animatedAction.play();
       animatedAction.timeScale = 1;

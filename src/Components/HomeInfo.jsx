@@ -3,10 +3,24 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import resume from "../assets/Abhay_Full_Stack_Resume.pdf"
 import { IoCall, IoMailSharp } from 'react-icons/io5';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const HomeInfo = ({ currentStage }) => {
 
+  useGSAP(() => {
+    // GSAP Animations for text
 
+        gsap.fromTo('.title', 
+            { x: 100, opacity: 0 }, 
+            { x: 0, opacity: 1, duration: 0.5 }
+        );
+        gsap.fromTo('.button', 
+            { x: -100, opacity: 0 }, 
+            { x: 0, opacity: 1, duration: 0.5 }
+        );
+
+}, [currentStage]);
 
 
 

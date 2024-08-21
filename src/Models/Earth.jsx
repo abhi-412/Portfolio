@@ -134,7 +134,7 @@ const Earth = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
         setCurrentStage(2);
       } else if (normalizedRotation >=4.51 && normalizedRotation <= 6.0) {
         setCurrentStage(1);
-      } else  if((normalizedRotation >= 0 && normalizedRotation <= 0.2) || (normalizedRotation >= 6.0)) {
+      } else  if(normalizedRotation <= 0.2 || normalizedRotation >= 6.0) {
         setCurrentStage(5);
       }
     }
