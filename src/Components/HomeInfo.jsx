@@ -61,8 +61,7 @@ const HomeInfo = ({ currentStage }) => {
               </a>
 
         </div>
-      </div>
-    );
+      </div>    );
   }
 
   if (currentStage === 2) {
